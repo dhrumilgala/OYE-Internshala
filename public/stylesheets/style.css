@@ -1,0 +1,76 @@
+.logo {
+  border-radius: 100%;
+  margin-right: 5%;
+}
+
+.navbar-brand {
+
+  font-size: 2rem;
+  font-weight: bold;
+  padding-left: 1%;
+  font-family: "Monotype Corsiva";
+}
+
+.nav-item {
+  padding: 0 10px;
+  font-size: 20px;
+}
+
+
+.icon {
+  color: #a6a1a1;
+  font-size: 1.2rem;
+}
+
+.container-fluid {
+  padding: 1% 1%;
+
+}
+
+
+.par{
+  width:65%;
+  font-size: 20px;
+  padding:15px;
+  line-height: 2;
+}
+
+hr {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  width: 7%;
+  border-top: 8px dotted grey;
+}
+
+
+
+
+.feature-box {
+  padding: 4.5%;
+}
+
+.icons {
+  color:#03bafc;
+  margin-bottom: 1rem;
+}
+
+.icons:hover {
+  cursor: pointer;
+  color: #1803fc;
+}
+
+
+
+#footer {
+  background-color: lightgrey;
+}
+
+.social-icon {
+  margin: 20px 20px;
+  color: black;
+
+}
+
+.a:hover{
+  cursor: pointer;
+}

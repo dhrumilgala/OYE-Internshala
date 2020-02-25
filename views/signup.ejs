@@ -1,0 +1,26 @@
+<% include partials/head.ejs%>
+<section>
+    <div class="container">
+        <div class="display-1">Sign Up</div>
+        <br>
+        <br>
+        <% if (errlog==1) { %>
+        <p> A user with this email exists</p>
+        <% }%>
+    <form action="/signup/" method="post">
+        <div class="form-group form-row">
+            <label for="name" class="form-">Name</label>
+            <input type="text" name="Name" id="Name">
+        </div>
+        <div class="form-group form-row">
+            <label for="name">Email</label>
+            <input type="email" name="email" id="email">
+        </div>
+        <div class="form-group form-row">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password">
+        </div>
+        <button type="submit" class="btn btn-lg btn-primary">Sign Up</button>
+    </form>
+    </div>
+</section>

@@ -1,0 +1,29 @@
+<% include partials/head.ejs %>
+
+<section>
+    <div class="container">
+        <div class="display-3">Login</div>
+        <br>
+        <% if(errlog==1) { %>
+        <p>Incorrect Password</p>
+        <% }%>
+        <% if(errlog==2) { %>
+        <p>User not found Please <a href="/signup">Register</a></p>
+        <% }%>
+
+        <form action="/login/hey" method="post">
+            <div class="form-group form-row">
+                <label for="name">Email</label>
+                <input type="email" name="email" id="email">
+            </div>
+            <div class="form-group form-row">
+                <label for="password">Password</label>
+
+                <input type="password" name="password" id="password">
+            </div>
+
+            <button class="btn btn-lg btn-primary">Login</button>
+            <a href="/signup" class="btn-primary btn  btn-lg">Sign Up</a>
+        </form>
+    </div>
+</section>
