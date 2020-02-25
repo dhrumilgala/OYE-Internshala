@@ -1,12 +1,11 @@
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 mongoose.connect("mongodb+srv://newUser:pass1234@indent-pavbm.mongodb.net/test?retryWrites=true&w=majority",{useNewUrlParser: true, useUnifiedTopology: true});
-const userSchema = new mongoose.Schema({
-    name: String,
-    email: String,
+const adminSchema = new mongoose.Schema({
+    username: String,
     password: String
 });
-const user = mongoose.model('users',userSchema);
+const admin1 = mongoose.model('admin',adminSchema);
 
 
-module.exports = user;
+module.exports = admin1;

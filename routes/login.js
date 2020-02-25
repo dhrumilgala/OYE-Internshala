@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var user = require('./userModel');
+var SHA256 = require('crypto-js/sha256');
 
 router.post('/hey',function (req,res) {
     console.log(req.body.email);
@@ -11,7 +12,7 @@ router.post('/hey',function (req,res) {
         }
         else
         {
-            if(user1[0].password == req.body.password)
+            if(user1[0].password == SHA256(req.body.password))
             {
                 console.log('pass');
                 res.redirect('/');
