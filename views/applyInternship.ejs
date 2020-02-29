@@ -1,0 +1,26 @@
+<h1>Apply For internship</h1>
+<br>
+<%= internship.name %>
+<br>
+<%= internship.description %>
+<hr>
+<form action="request" method="post">
+    <label for="">Internship id</label>
+    <input type="text" name="internshipId" id="internshipId" value="<%=internship.internshipId %>" disabled>
+    <br>
+    <label>Applicant Userid</label>
+    <input type="text" value="<%=userEmail%>" disabled name="userId" id="userId">
+    <br>
+    <label for="">Domain:</label>
+    <select name="domain" id="domain">
+        <option value="react">React</option>
+        <option value="node">Node.js</option>
+        <option value="frontend">FrontEnd</option>
+        <option value="angular">Angular</option>
+        <option value="database">Mongo & Other Database</option>
+        <option value="UI/UX">UI & UX </option>
+    </select>
+    <br>
+    <button type="submit">Submit</button>
+
+</form>

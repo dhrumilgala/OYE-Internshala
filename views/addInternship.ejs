@@ -1,0 +1,65 @@
+<% include partials/head.ejs %>
+
+<% if(disp) {%>
+<form action="/admin/addInternship" method="post">
+    <label for="">Name</label>
+    <input type="text" id="name" name="name" required>
+    <br>
+    <label for="">Description</label>
+    <textarea name="description" id="description" required>
+    </textarea>
+    <br>
+    <label for="">Author</label>
+    <input type="text">
+    <br>
+    <label for="">User 1:</label>
+    <select name="user1" id="user1">
+        <option value="" selected> </option>
+        <% for (let i=0;i<users.length;i++) {%>
+            <option value="<%= users[i].email %>"><%= users[i].email%></option>
+        <%}%>
+    </select>
+    <br>
+    <label for="">User 2:</label>
+    <select name="user2" id="user2">
+        <option value="" selected></option>
+        <% for (let i=0;i<users.length;i++) {%>
+            <option value="<%= users[i].email %>"><%= users[i].email%></option>
+        <%}%>
+    </select>
+    <br>
+    <label for="">User 3:</label>
+    <select name="user3" id="user3">
+        <option value="" selected></option>
+        <% for (let i=0;i<users.length;i++) {%>
+            <option value="<%= users[i].email %>"><%= users[i].email%></option>
+        <%}%>
+    </select>
+    <br>
+    <label for="">User 4:</label>
+    <select name="user4" id="user4">
+        <option value="" selected> </option>
+        <% for (let i=0;i<users.length;i++) {%>
+            <option value="<%= users[i].email %>"><%= users[i].email%></option>
+        <%}%>
+    </select>
+    <br>
+    <label for="">Internship id</label>
+    <input type="text" id="internshipid" name="internshipid" required>
+    <br>
+    <label for="">Image Link</label>
+    <input type="text" id="link1" name="link1" required>
+    <br>
+    <label>Complete</label>
+    <select name="complete" id="complete">
+        <option value="0">0</option>
+        <option value="1">1</option>
+    </select>
+    <br>
+    <button type="submit" class="btn-primary btn btn-lg">Add to Server</button>
+    <a href="/admin" class="btn-primary btn btn-lg">Go back to Admin Home</a>
+</form>
+<% } else {%>
+WRONG PAGE
+<%}%>
+<% include partials/footer.ejs %>

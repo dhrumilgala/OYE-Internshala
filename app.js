@@ -10,6 +10,8 @@ var usersRouter = require('./routes/users');
 var signuprouter = require('./routes/signu');
 var loginRouter = require('./routes/login');
 var adminRouter = require('./routes/admin');
+var internshipRouter = require('./routes/internships');
+var session = require('express-session');
 var app = express();
 
 // view engine setup
@@ -27,8 +29,9 @@ app.use(bodyParser.json());
 app.use('/signup',signuprouter);
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/login',loginRouter)
+app.use('/login',loginRouter);
 app.use('/admin',adminRouter);
+app.use('/internships',internshipRouter);
 
 
 // catch 404 and forward to error handler

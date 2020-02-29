@@ -21,7 +21,7 @@
                 </ul>
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item ">
-                        <a class="nav-link" href="C:\Users\Krish\Desktop\Indent\internship.html">Internship Opportunities</a>
+                        <a class="nav-link <%if(user===''){ %> d-none <% }%> " href="/internships" >Internship Opportunities</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto">
@@ -31,9 +31,15 @@
                 </ul>
                 <ul class="navbar-nav ml">
                     <li class="nav-item">
-                        <a class="nav-link" href="/login">Sign In/Register</a>
-                    </li>
+                        <% if(user === ''){%>
+                            <a class="nav-link" href="/login">    Sign In/Register</a>
+                        <%} else {%>
+                            <a class="nav-link" href="/logout">
+                                Logout,<%= user %>
+                            </a>
+                            <%}%>
 
+                    </li>
                 </ul>
             </div>
         </nav>
