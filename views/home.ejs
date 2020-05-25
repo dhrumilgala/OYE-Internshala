@@ -5,7 +5,7 @@
 
         <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
 
-            <a class="navbar-brand" href="C:\Users\Krish\Desktop\WPL Project\index.html">
+            <a class="navbar-brand" href="/">
                 <img src="https://cdn5.vectorstock.com/i/1000x1000/29/04/golden-font-type-letter-i-vector-4992904.jpg" width="50" height="50" alt="I" class="logo" >
                 Indent
             </a>
@@ -21,17 +21,17 @@
                 </ul>
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item ">
-                        <a class="nav-link <%if(user===''){ %> d-none <% }%> " href="/internships" >Internship Opportunities</a>
+                        <a class="nav-link <%if(user==='undefined'){ %> d-none <% }%> " href="/internships" >Internship Opportunities</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="C:\Users\Krish\Desktop\Indent\contactus.html">Contact Us</a>
+                        <a class="nav-link" href="/contactus">Contact Us</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ml">
                     <li class="nav-item">
-                        <% if(user === ''){%>
+                        <% if(user === 'undefined'){%>
                             <a class="nav-link" href="/login">    Sign In/Register</a>
                         <%} else {%>
                             <a class="nav-link" href="/logout">

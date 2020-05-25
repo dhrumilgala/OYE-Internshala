@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb+srv://tanveeshs:Tanveesh21@indent-pavbm.mongodb.net/test?retryWrites=true&w=majority",{useNewUrlParser: true,});
+mongoose.connect("mongodb+srv://tanveeshs:admin@cluster0-pavbm.mongodb.net/test?retryWrites=true&w=majority",{useNewUrlParser: true,});
 const adminSchema = new mongoose.Schema({
     username: String,
     password: String

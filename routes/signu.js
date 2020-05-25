@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const user = require('./userModel');
-var SHA256 = require('crypto-js/sha256')
+var SHA256 = require('crypto-js/sha256');
 
 router.get('/',function (req,res) {
     res.render('signup',{errlog: 0})

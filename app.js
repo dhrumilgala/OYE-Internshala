@@ -8,9 +8,9 @@ const bodyParser = require('body-parser');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var signuprouter = require('./routes/signu');
-var loginRouter = require('./routes/login');
 var adminRouter = require('./routes/admin');
 var internshipRouter = require('./routes/internships');
+var contactRouter = require('./routes/contact');
 var session = require('express-session');
 var app = express();
 
@@ -28,8 +28,8 @@ app.use(bodyParser.json());
 
 app.use('/signup',signuprouter);
 app.use('/', indexRouter);
+app.use('/contactus',contactRouter);
 app.use('/users', usersRouter);
-app.use('/login',loginRouter);
 app.use('/admin',adminRouter);
 app.use('/internships',internshipRouter);
 
@@ -54,4 +54,5 @@ app.use(function(err, req, res, next) {
 app.listen(3200,function () {
   console.log('STARTED');
 });
+
 module.exports = app;

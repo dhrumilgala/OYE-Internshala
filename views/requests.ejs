@@ -1,0 +1,29 @@
+<% include partials/head.ejs %>
+<br>
+
+<% if(disp) {%>
+<h1>Internships</h1>
+<div class="container">
+    <%for (let i=0;i<req1.length;i++) {%>
+        <div>
+            <%= req1[i].internshipId %>
+            <br>
+            <%= req1[i].userId %>
+            <br>
+            <%= req1[i].domain%>
+            <br>
+            <%=req1[i].date%>
+            <br>
+            <a href="/admin/requests/<%= req1[i]._id %>" class="btn btn-primary" >Seen</a>
+
+            <hr>
+        </div>
+
+    <%}%>
+
+
+    <%}else{%>
+        WRONG PAGE
+        <%}%>
+
+</div>

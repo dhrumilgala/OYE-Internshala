@@ -5,6 +5,8 @@ const SHA256 = require('crypto-js/sha256');
 let validUser = false;
 const user = require('./userModel');
 const internship = require('./internshipsModel');
+const requests = require('./requestsModel')
+
 
 //ROUTER FOR ADMIN LOGIN
 router.get('/',function (req,res) {
@@ -41,6 +43,7 @@ router.post('/',function (req,res) {
             }
         });
 });
+
 //ROUTER FOR ADMIN ADD INTERNSHIP
     router.get('/internships', function (req, res) {
         const u = [];
@@ -62,13 +65,46 @@ router.post('/',function (req,res) {
         intern.complete = req.body.complete;
         intern.link = req.body.link1;
         intern.save();
-        res.redirect('/')
+        res.redirect('/admin')
 
     });
 
     router.get('/home', function (req, res) {
         res.redirect('/admin')
     });
+
+
+    router.get('/requests',function (req,res) {
+
+        requests.find({seen:false},function (err,result) {
+            res.render('requests',{req1:result,disp:validUser})
+        })
+    })
+    router.get('/requests/:id',function (req,res) {
+
+        const r = req.params.id;
+        requests.find({_id:r},function (err,result) {
+            if(err){
+                console.log(err)
+            }
+            result[0].seen = true
+            result[0].save()
+        })
+        requests.remove({_id:r})
+
+            res.redirect('/admin/requests')
+        })
+
+
+    // TO CREATE AN ADMIN
+    //
+    // router.get('/xyz',function (req,res) {
+    //     var myData = new adminModel ({
+    //         username:'admin',
+    //         password: SHA256('admin')
+    //     })
+    //     myData.save();
+    // })
 
 
 module.exports = router;

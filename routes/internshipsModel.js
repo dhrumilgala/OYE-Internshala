@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
-const fs = require('fs');
-mongoose.connect("mongodb+srv://tanveeshs:Tanveesh21@indent-pavbm.mongodb.net/test?retryWrites=true&w=majority",{useNewUrlParser: true});
+mongoose.connect("mongodb+srv://tanveeshs:admin@cluster0-pavbm.mongodb.net/test?retryWrites=true&w=majority",{useNewUrlParser: true});
 const internshipSchema = new mongoose.Schema({
     name: String,
     description:String,
