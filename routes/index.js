@@ -41,7 +41,7 @@ router.post('/login/hey',function (req,res) {
     {
       if(user1[0].password == SHA256(req.body.password))
       {
-        res.cookie('username', user1[0].email, { maxAge: 300000, httpOnly: true });
+        res.cookie('username', user1[0].email, { maxAge: 3000000, httpOnly: true });
         res.redirect('/');
       }
       else
