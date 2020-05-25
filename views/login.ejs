@@ -1,7 +1,232 @@
-<% include partials/head.ejs %>
+<% include partials/head.ejs%>
+
+<style>
+    .par{
+        font-size: 18px;
+    }
+    
+body {
+  text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Montserrat-Bold";
+}
+
+p {
+  color: #8f8f8f;
+}
+
+/* Headings */
+
+.big-heading {
+  font-family: "Montserrat-Black";
+  font-size: 3.5rem;
+  line-height: 1.5;
+}
+
+.section-heading {
+  font-size: 3rem;
+  line-height: 1.5;
+}
+
+/* Containers */
+
+
+
+/* Sections */
+
+.colored-section {
+  background-color: #ff4c68;
+  color: #fff;
+}
+
+.white-section {
+  background-color: #fff;
+}
+
+/* Navigation Bar */
+
+/* Buttons */
+
+.download-button {
+  margin: 5% 3% 5% 0;
+}
+
+/* Title Section */
+
+#title {
+  background-color: #ff4c68;
+  color: #fff;
+  text-align: left;
+}
+
+#title .container-fluid {
+  padding: 3% 15% 7%;
+}
+
+/* Title Image */
+
+.title-image {
+  width: 60%;
+  transform: rotate(25deg);
+  position: absolute;
+  right: 30%;
+}
+
+/* Features Section */
+
+#features {
+  position: relative;
+}
+
+.feature-title {
+  font-size: 1.5rem;
+}
+
+.feature-box {
+  padding: 4.5%;
+}
+
+.icons {
+  color: #ef8172;
+  margin-bottom: 1rem;
+}
+
+.icons:hover {
+  color: #ff4c68;
+}
+
+/* Testimonial Section */
+
+#testimonials {
+  background-color: #ef8172;
+}
+
+.testimonial-text {
+  font-size: 3rem;
+  line-height: 1.5;
+}
+
+.testimonial-image {
+  width: 10%;
+  border-radius: 100%;
+  margin: 20px;
+}
+
+
+#press {
+  background-color: #ef8172;
+  padding-bottom: 3%;
+}
+
+.press-logo {
+  width: 15%;
+  margin: 20px 20px 50px;
+}
+
+/* Pricing Section */
+
+#pricing {
+  padding: 100px;
+}
+
+.price-text {
+  font-size: 3rem;
+  line-height: 1.5;
+}
+
+.pricing-column {
+  padding: 3% 2%;
+}
+
+/* CTA Section */
+
+
+/* Footer Section */
+
+
+.social-icon {
+  margin: 20px 20px;
+  color: aqua;
+}
+
+@media (max-width: 1028px) {
+
+  #title {
+    text-align: center;
+  }
+
+  .title-image {
+    position: static;
+    transform: rotate(0);
+  }
+}
+
+td { 
+                font-size: 20px;
+                width:150px; 
+                padding:10px }
+
+
+.space{
+    margin: 20px;
+}
+
+
+
+</style>
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid fix">
+
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+
+        <a class="navbar-brand" href="/">
+            <img src="https://cdn5.vectorstock.com/i/1000x1000/29/04/golden-font-type-letter-i-vector-4992904.jpg" width="50" height="50" alt="I" class="logo" >
+            Indent
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mr">
+                <li class="nav-item ">
+                    <a class="nav-link" href="#AboutUs">About Us</a>
+                </li>
+            </ul>
+            
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/contactus">Contact Us</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml">
+                <li class="nav-item">
+                        <a class="nav-link" href="/login">    Sign In/Register</a>
+                   
+
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
 
 <section>
     <div class="container">
+        <center>
+            <br>
+            <br>
         <div class="display-3">Login</div>
         <br>
         <% if(errlog==1) { %>
@@ -10,20 +235,39 @@
         <% if(errlog==2) { %>
         <p>User not found Please <a href="/signup">Register</a></p>
         <% }%>
-
+        <br>
+        <br>
         <form action="/login/hey" method="post">
-            <div class="form-group form-row">
-                <label for="name">Email</label>
-                <input type="email" name="email" id="email">
-            </div>
-            <div class="form-group form-row">
-                <label for="password">Password</label>
 
-                <input type="password" name="password" id="password">
-            </div>
+            <table>
+                <tr><td><label for="name">Email</label></td><td>
+                    <input type="email" name="email" id="email">
+                </td></tr>
+                
+                <tr><td><label for="password">Password</label></td>
+                    <td><input type="password" name="password" id="password">
+                </td></tr>
+        
+                
+                            
+            </table>
+            <br>
+            <br>
+            
 
-            <button class="btn btn-lg btn-primary">Login</button>
-            <a href="/signup" class="btn-primary btn  btn-lg">Sign Up</a>
+            <button class="btn btn-lg btn-primary space">Login</button>
+            <a href="/signup" class="btn-primary btn  btn-lg space">Sign Up</a>
         </form>
+    </center>
+
     </div>
 </section>
+
+<br>
+<br>
+<hr>
+<br>
+
+<% include partials/footer.ejs %>
+<br>
+<br>

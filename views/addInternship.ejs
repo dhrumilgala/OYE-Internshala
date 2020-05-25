@@ -1,65 +1,300 @@
 <% include partials/head.ejs %>
 
+
+<style>
+    .par{
+        font-size: 18px;
+    }
+    
+body {
+  text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Montserrat-Bold";
+}
+
+p {
+  color: #8f8f8f;
+}
+
+/* Headings */
+
+.big-heading {
+  font-family: "Montserrat-Black";
+  font-size: 3.5rem;
+  line-height: 1.5;
+}
+
+.section-heading {
+  font-size: 3rem;
+  line-height: 1.5;
+}
+
+/* Containers */
+
+
+
+/* Sections */
+
+.colored-section {
+  background-color: #ff4c68;
+  color: #fff;
+}
+
+.white-section {
+  background-color: #fff;
+}
+
+/* Navigation Bar */
+
+/* Buttons */
+
+.download-button {
+  margin: 5% 3% 5% 0;
+}
+
+/* Title Section */
+
+#title {
+  background-color: #ff4c68;
+  color: #fff;
+  text-align: left;
+}
+
+#title .container-fluid {
+  padding: 3% 15% 7%;
+}
+
+/* Title Image */
+
+.title-image {
+  width: 60%;
+  transform: rotate(25deg);
+  position: absolute;
+  right: 30%;
+}
+
+/* Features Section */
+
+#features {
+  position: relative;
+}
+
+.feature-title {
+  font-size: 1.5rem;
+}
+
+.feature-box {
+  padding: 4.5%;
+}
+
+.icons {
+  color: #ef8172;
+  margin-bottom: 1rem;
+}
+
+.icons:hover {
+  color: #ff4c68;
+}
+
+/* Testimonial Section */
+
+#testimonials {
+  background-color: #ef8172;
+}
+
+.testimonial-text {
+  font-size: 3rem;
+  line-height: 1.5;
+}
+
+.testimonial-image {
+  width: 10%;
+  border-radius: 100%;
+  margin: 20px;
+}
+
+
+#press {
+  background-color: #ef8172;
+  padding-bottom: 3%;
+}
+
+.press-logo {
+  width: 15%;
+  margin: 20px 20px 50px;
+}
+
+/* Pricing Section */
+
+#pricing {
+  padding: 100px;
+}
+
+.price-text {
+  font-size: 3rem;
+  line-height: 1.5;
+}
+
+.pricing-column {
+  padding: 3% 2%;
+}
+
+/* CTA Section */
+
+
+/* Footer Section */
+
+
+.social-icon {
+  margin: 20px 20px;
+  color: aqua;
+}
+
+@media (max-width: 1028px) {
+
+  #title {
+    text-align: center;
+  }
+
+  .title-image {
+    position: static;
+    transform: rotate(0);
+  }
+}
+
+td { 
+                font-size: 15px;
+                width:150px; 
+                padding:5px }
+
+
+.space{
+    margin: 20px;
+}
+
+
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>
+<h1><center>Add a new Internship</center></h1>
+<br>
+<br>
+
 <% if(disp) {%>
+
 <form action="/admin/addInternship" method="post">
-    <label for="">Name</label>
-    <input type="text" id="name" name="name" required>
+    <center>
+    <table>
+        <tr><td><label for="">Name</label>
+        </td><td>
+            <input type="text" id="name" name="name" required>
+        </td></tr>
+        
+        <tr><td><label for="">Description</label>
+        </td>
+            <td><textarea name="description" id="description" required>
+            </textarea>
+
+        </td></tr>
+
+        <tr><td><label for="">Author</label></td><td>
+            <input type="text">
+        </td></tr>
+
+        <tr><td><label for="">User 1:</label></td><td>
+            <select name="user1" id="user1">
+                <option value="" selected> </option>
+                <% for (let i=0;i<users.length;i++) {%>
+                    <option value="<%= users[i].email %>"><%= users[i].email%></option>
+                <%}%>
+            </select>
+        </td></tr>
+
+        <tr><td><label for="">User 2:</label></td><td>
+            <select name="user2" id="user2">
+                <option value="" selected></option>
+                <% for (let i=0;i<users.length;i++) {%>
+                    <option value="<%= users[i].email %>"><%= users[i].email%></option>
+                <%}%>
+            </select>
+        </td></tr>
+
+        <tr><td> <label for="">User 3:</label></td><td>
+            <select name="user3" id="user3">
+                <option value="" selected></option>
+                <% for (let i=0;i<users.length;i++) {%>
+                    <option value="<%= users[i].email %>"><%= users[i].email%></option>
+                <%}%>
+            </select>
+        </td></tr>
+
+        <tr><td> <label for="">User 4:</label></td><td>
+            <select name="user4" id="user4">
+                <option value="" selected> </option>
+                <% for (let i=0;i<users.length;i++) {%>
+                    <option value="<%= users[i].email %>"><%= users[i].email%></option>
+                <%}%>
+            </select>
+        </td></tr>
+
+        <tr><td><label for="">Internship id</label></td><td>
+            <input type="text" id="internshipid" name="internshipid" required>
+        </td></tr>
+
+        <tr><td><label for="">Image Link</label></td><td>
+            <input type="text" id="link1" name="link1" required>
+        </td></tr>
+
+        <tr><td>    <label>Complete</label>        </td><td>
+            <select name="complete" id="complete">
+                <option value="0">0</option>
+                <option value="1">1</option>
+            </select>
+        </td></tr>
+                    
+    </table>
     <br>
-    <label for="">Description</label>
-    <textarea name="description" id="description" required>
-    </textarea>
     <br>
-    <label for="">Author</label>
-    <input type="text">
-    <br>
-    <label for="">User 1:</label>
-    <select name="user1" id="user1">
-        <option value="" selected> </option>
-        <% for (let i=0;i<users.length;i++) {%>
-            <option value="<%= users[i].email %>"><%= users[i].email%></option>
-        <%}%>
-    </select>
-    <br>
-    <label for="">User 2:</label>
-    <select name="user2" id="user2">
-        <option value="" selected></option>
-        <% for (let i=0;i<users.length;i++) {%>
-            <option value="<%= users[i].email %>"><%= users[i].email%></option>
-        <%}%>
-    </select>
-    <br>
-    <label for="">User 3:</label>
-    <select name="user3" id="user3">
-        <option value="" selected></option>
-        <% for (let i=0;i<users.length;i++) {%>
-            <option value="<%= users[i].email %>"><%= users[i].email%></option>
-        <%}%>
-    </select>
-    <br>
-    <label for="">User 4:</label>
-    <select name="user4" id="user4">
-        <option value="" selected> </option>
-        <% for (let i=0;i<users.length;i++) {%>
-            <option value="<%= users[i].email %>"><%= users[i].email%></option>
-        <%}%>
-    </select>
-    <br>
-    <label for="">Internship id</label>
-    <input type="text" id="internshipid" name="internshipid" required>
-    <br>
-    <label for="">Image Link</label>
-    <input type="text" id="link1" name="link1" required>
-    <br>
-    <label>Complete</label>
-    <select name="complete" id="complete">
-        <option value="0">0</option>
-        <option value="1">1</option>
-    </select>
-    <br>
-    <button type="submit" class="btn-primary btn btn-lg">Add to Server</button>
-    <a href="/admin" class="btn-primary btn btn-lg">Go back to Admin Home</a>
+  
+
+    <button type="submit" class="btn-primary btn btn-lg space">Add to Server</button>
+    <a href="/admin" class="btn-primary btn btn-lg space">Go back to Admin Home</a>
+</center>
 </form>
+
+
+
 <% } else {%>
 WRONG PAGE
 <%}%>
+
+
+
+<br>
+<br>
+<hr>
+<br>
+
 <% include partials/footer.ejs %>
+<br>
+<br>
+

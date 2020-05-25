@@ -1,8 +1,18 @@
 <% include partials/head.ejs %>
 <br>
-
+<br>
 <% if(disp) {%>
-<h1>Internships</h1>
+<h1><center>Internship Requests</center></h1>
+<br>
+<br>
+
+<style>
+    .container{
+        font-size: 15px;
+        line-height: 2;
+    }
+</style>
+
 <div class="container">
     <%for (let i=0;i<req1.length;i++) {%>
         <div>
@@ -13,6 +23,7 @@
             <%= req1[i].domain%>
             <br>
             <%=req1[i].date%>
+            <br>
             <br>
             <a href="/admin/requests/<%= req1[i]._id %>" class="btn btn-primary" >Seen</a>
 

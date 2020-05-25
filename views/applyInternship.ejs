@@ -1,3 +1,193 @@
+
+
+
+
+<% include partials/head.ejs %>
+
+
+<style>
+    .par{
+        font-size: 18px;
+    }
+    
+body {
+  text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Montserrat-Bold";
+}
+
+p {
+  color: #8f8f8f;
+}
+
+/* Headings */
+
+.big-heading {
+  font-family: "Montserrat-Black";
+  font-size: 3.5rem;
+  line-height: 1.5;
+}
+
+.section-heading {
+  font-size: 3rem;
+  line-height: 1.5;
+}
+
+/* Containers */
+
+
+
+/* Sections */
+
+.colored-section {
+  background-color: #ff4c68;
+  color: #fff;
+}
+
+.white-section {
+  background-color: #fff;
+}
+
+/* Navigation Bar */
+
+/* Buttons */
+
+.download-button {
+  margin: 5% 3% 5% 0;
+}
+
+/* Title Section */
+
+#title {
+  background-color: #ff4c68;
+  color: #fff;
+  text-align: left;
+}
+
+#title .container-fluid {
+  padding: 3% 15% 7%;
+}
+
+/* Title Image */
+
+.title-image {
+  width: 60%;
+  transform: rotate(25deg);
+  position: absolute;
+  right: 30%;
+}
+
+/* Features Section */
+
+#features {
+  position: relative;
+}
+
+.feature-title {
+  font-size: 1.5rem;
+}
+
+.feature-box {
+  padding: 4.5%;
+}
+
+.icons {
+  color: #ef8172;
+  margin-bottom: 1rem;
+}
+
+.icons:hover {
+  color: #ff4c68;
+}
+
+/* Testimonial Section */
+
+#testimonials {
+  background-color: #ef8172;
+}
+
+.testimonial-text {
+  font-size: 3rem;
+  line-height: 1.5;
+}
+
+.testimonial-image {
+  width: 10%;
+  border-radius: 100%;
+  margin: 20px;
+}
+
+
+#press {
+  background-color: #ef8172;
+  padding-bottom: 3%;
+}
+
+.press-logo {
+  width: 15%;
+  margin: 20px 20px 50px;
+}
+
+/* Pricing Section */
+
+#pricing {
+  padding: 100px;
+}
+
+.price-text {
+  font-size: 3rem;
+  line-height: 1.5;
+}
+
+.pricing-column {
+  padding: 3% 2%;
+}
+
+/* CTA Section */
+
+
+/* Footer Section */
+
+
+.social-icon {
+  margin: 20px 20px;
+  color: aqua;
+}
+
+@media (max-width: 1028px) {
+
+  #title {
+    text-align: center;
+  }
+
+  .title-image {
+    position: static;
+    transform: rotate(0);
+  }
+}
+
+td { 
+                font-size: 15px;
+                width:150px; 
+                padding:5px }
+
+
+.space{
+    margin: 20px;
+}
+
+
+
+</style>
+
+
+
+<br>
+<br>
+
+
 <h1>Apply For internship</h1>
 <br>
 <%= internship.name %>
@@ -5,22 +195,47 @@
 <%= internship.description %>
 <hr>
 <form action="request" method="post">
-    <label for="">Internship id</label>
-    <input type="text" name="internshipId" id="internshipId" value="<%=internship.internshipId %>" disabled>
-    <br>
-    <label>Applicant Userid</label>
-    <input type="text" value="<%= userEmail%>" disabled name="userId" id="userId">
-    <br>
-    <label for="">Domain:</label>
-    <select name="domain" id="domain">
-        <option value="react">React</option>
-        <option value="node">Node.js</option>
-        <option value="frontend">FrontEnd</option>
-        <option value="angular">Angular</option>
-        <option value="database">Mongo & Other Database</option>
-        <option value="UI/UX">UI & UX </option>
-    </select>
-    <br>
+    <center>
+        <table>
+            <tr><td><label for="">Internship id</label>
+            </td><td>
+                <input type="text" name="internshipId" id="internshipId" value="<%=internship.internshipId %>" disabled>            </td></tr>
+            
+            <tr><td><label>Applicant Userid</label>
+            </td>
+                <td><input type="text" value="<%= userEmail%>" disabled name="userId" id="userId">
+    
+            </td></tr>
+    
+            <tr><td><label for="">Domain:</label></td><td>
+                <select name="domain" id="domain">
+                    <option value="react">React</option>
+                    <option value="node">Node.js</option>
+                    <option value="frontend">FrontEnd</option>
+                    <option value="angular">Angular</option>
+                    <option value="database">Mongo & Other Database</option>
+                    <option value="UI/UX">UI & UX </option>
+                </select>
+            </td></tr>
+    
+            
+                        
+        </table>
+<br>
+<br>
     <button type="submit">Submit</button>
-
+</center>
 </form>
+
+
+
+
+<br>
+<br>
+<hr>
+<br>
+
+<% include partials/footer.ejs %>
+<br>
+<br>
+
