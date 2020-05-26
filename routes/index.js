@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var user = require('./userModel');
+var user = require('../models/userModel');
 var SHA256 = require('crypto-js/sha256');
 
 
@@ -19,7 +19,9 @@ function parseCookies (request) {
 
 router.get('/', function(req, res, next) {
   const a=parseCookies(req);
-  res.render('home',{user:decodeURIComponent(a.username)});
+  console.log(decodeURIComponent(a.username))
+
+  res.render('home',{user:decode(decodeURIComponent(a.username))});
 });
 router.get('/logout',function (req,res) {
   res.clearCookie('username');
@@ -41,7 +43,7 @@ router.post('/login/hey',function (req,res) {
     {
       if(user1[0].password == SHA256(req.body.password))
       {
-        res.cookie('username', user1[0].email, { maxAge: 3000000, httpOnly: true });
+        res.cookie('username', encode(user1[0].email), { maxAge: 3000000, httpOnly: true });
         res.redirect('/');
       }
       else
@@ -54,3 +56,25 @@ router.post('/login/hey',function (req,res) {
 
 
 module.exports = router;
+
+function encode(str) {
+  var g=[];
+  for(let i=0;i<str.length;i++) {
+    g.push(String.fromCharCode(str.charCodeAt(i) + i))
+  }
+  return g.join('')
+}
+
+function decode(str) {
+  if(str != 'undefined') {
+    var g = []
+    for (let i=0;i<str.length;i++) {
+      g.push(String.fromCharCode(str.charCodeAt(i)-i))
+    }
+    return g.join('')
+  }
+  else {
+    return 'undefined';
+  }
+
+}

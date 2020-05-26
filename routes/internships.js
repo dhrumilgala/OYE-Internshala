@@ -1,9 +1,9 @@
 var express= require('express');
 var router = express.Router();
-const internship = require('./internshipsModel');
+const internship = require('../models/internshipsModel');
 const fs = require('fs');
-const internsh = require('./internshipsModel');
-const req1 = require('./requestsModel');
+const internsh = require('../models/internshipsModel');
+const req1 = require('../models/requestsModel');
 var internshipId = '';
 
 function parseCookies (request) {

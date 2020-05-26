@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-const user = require('./userModel');
+const user = require('../models/userModel');
 var SHA256 = require('crypto-js/sha256');
 
 router.get('/',function (req,res) {

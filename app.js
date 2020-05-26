@@ -6,7 +6,6 @@ var logger = require('morgan');
 const bodyParser = require('body-parser');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
 var signuprouter = require('./routes/signu');
 var adminRouter = require('./routes/admin');
 var internshipRouter = require('./routes/internships');
@@ -29,7 +28,6 @@ app.use(bodyParser.json());
 app.use('/signup',signuprouter);
 app.use('/', indexRouter);
 app.use('/contactus',contactRouter);
-app.use('/users', usersRouter);
 app.use('/admin',adminRouter);
 app.use('/internships',internshipRouter);
 

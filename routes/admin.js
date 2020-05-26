@@ -1,11 +1,11 @@
 var express = require('express');
 var router = express.Router();
-const adminModel = require('./adminModel');
+const adminModel = require('../models/adminModel');
 const SHA256 = require('crypto-js/sha256');
 let validUser = false;
-const user = require('./userModel');
-const internship = require('./internshipsModel');
-const requests = require('./requestsModel')
+const user = require('../models/userModel');
+const internship = require('../models/internshipsModel');
+const requests = require('../models/requestsModel')
 
 
 //ROUTER FOR ADMIN LOGIN
