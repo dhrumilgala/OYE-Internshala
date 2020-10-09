@@ -97,14 +97,14 @@ router.post('/',function (req,res) {
 
 
     // TO CREATE AN ADMIN
-    //
-    // router.get('/xyz',function (req,res) {
-    //     var myData = new adminModel ({
-    //         username:'admin',
-    //         password: SHA256('admin')
-    //     })
-    //     myData.save();
-    // })
+
+    router.get('/xyz',function (req,res) {
+        var myData = new adminModel ({
+            username:'admin',
+            password: SHA256('admin')
+        })
+        myData.save();
+    })
 
 
 module.exports = router;

@@ -53,4 +53,4 @@ app.listen(3200,function () {
   console.log('STARTED');
 });
 
-module.exports = app;
+// module.exports = app;
